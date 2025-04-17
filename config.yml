@@ -1,3 +1,8 @@
+media_folder: "static/img/post" # 存放图片的文件夹
+public_folder: "/img/post" # 上传图片的src属性会以该路径开头
+backend:
+  name: bitbucket
+  repo: owner-name/repo-name # 仓库路径
 # 以下是我的Collections内容，如需要请根据自己的头文件内容自定义
 collections:
   - name: "post" # 定义该collection的路径
