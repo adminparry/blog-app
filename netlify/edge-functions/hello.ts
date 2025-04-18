@@ -1,4 +1,5 @@
+import pkg from '../../package.json';
 
-export default () => new Response("Hello world");
+export default () => new Response(pkg.name);
 
-export const config = { path: "/test" };
+export const config = { path: "/name" };
