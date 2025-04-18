@@ -1,4 +1,4 @@
-import pkg from '../../package.json';
+import * as pkg from '../../constant';
 
 export default () => new Response(pkg.name);
 
