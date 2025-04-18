@@ -1,2 +1,5 @@
 [build]
-  edge_functions = "netlify/edge-functions"
+  edge_functions = "edge-functions"
+
+[functions]
+  node_bundler = "esbuild"
