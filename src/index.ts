@@ -1,4 +1,5 @@
 import { PrismaClient } from '../generated/prisma'
+import type { Config } from "@netlify/edge-functions"
 
 const prisma = new PrismaClient()
 

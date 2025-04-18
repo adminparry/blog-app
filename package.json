@@ -27,6 +27,7 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
+    "@netlify/edge-functions": "^2.11.1",
     "@prisma/client": "^6.6.0"
   }
 }
