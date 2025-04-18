@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Menu" ALTER COLUMN "pid" DROP NOT NULL,
+ALTER COLUMN "create_time" DROP NOT NULL,
+ALTER COLUMN "update_time" DROP NOT NULL,
+ALTER COLUMN "create_user" DROP NOT NULL,
+ALTER COLUMN "update_user" DROP NOT NULL;

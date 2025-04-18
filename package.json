@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "studio": "prisma studio",
+    "init": "prisma migrate dev --name init"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,14 @@
     "url": "https://github.com/adminparry/blog-app/issues"
   },
   "homepage": "https://github.com/adminparry/blog-app#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "prisma": "^5.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0"
+  }
 }

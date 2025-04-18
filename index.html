@@ -1,12 +1,21 @@
-<!-- Excluding `doctype` and `head` but you should add them -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netlify</title>
+</head>
 <body>
-  <!-- Add these scripts to the bottom of the body -->
-  <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@^16/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/netlify-cms-app/dist/netlify-cms-app.js"></script>
-  
-  <!-- Initialize the CMS -->
-  <script>
-    NetlifyCmsApp.init();
-  </script>
+    <form name="contact" netlify>
+        <p>
+          <label>Name <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Email <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
 </body>
+</html>
