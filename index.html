@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>netlify</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            height: 100%;
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <form name="contact" netlify>
-        <p>
-          <label>Name <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Email <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+    <div class="center">
+
+        <form name="contact" netlify>
+            <p>
+                I will contract with you!
+            </p>
+            <p>
+                <label>Name <input type="text" name="name" /></label>
+            </p>
+            <p>
+                <label>Email <input type="email" name="email" /></label>
+            </p>
+            <p>
+                <label>phone <input type="number" name="phone" /></label>
+            </p>
+            <p>
+                <button type="submit">Send</button>
+            </p>
+        </form>
+    </div>
 </body>
+
 </html>
