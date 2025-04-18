@@ -3,7 +3,6 @@ import { PrismaClient } from '../generated/prisma'
 const prisma = new PrismaClient()
 
 
-const menus = await prisma.menu.findMany()
-export default () => new Response(menus);
+export default async () => new Response(await prisma.menu.findMany());
 
 export const config = { path: "/menus", method: 'GET' };
