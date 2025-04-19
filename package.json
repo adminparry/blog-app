@@ -6,6 +6,8 @@
     "dev": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "prisma studio",
+    "generate": "prisma generate",
+    
     "init": "prisma migrate dev --name init",
     "functions": "netlify dev",
     "tsc": "tsc netlify/edge-functions/menu.ts"
@@ -24,6 +26,7 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^20.11.30",
+    "netlify-cli": "^20.0.2",
     "prisma": "^5.11.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
