@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "prisma studio",
     "generate": "prisma generate",
-    
     "init": "prisma migrate dev --name init",
     "functions": "netlify dev",
     "tsc": "tsc netlify/edge-functions/menu.ts"
@@ -33,6 +32,7 @@
   },
   "dependencies": {
     "@netlify/edge-functions": "^2.11.1",
+    "@netlify/functions": "^3.1.2",
     "@prisma/client": "^6.6.0"
   }
 }
