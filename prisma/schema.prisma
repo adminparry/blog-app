@@ -33,3 +33,15 @@ model Menu {
   create_user String?
   update_user String?
 }
+
+
+model Relation {
+  id        Int       @id @default(autoincrement())
+  name  String
+  pid   Int?
+  deleted Boolean
+  create_at DateTime?
+  update_at DateTime?
+  create_user String?
+  update_user String?
+}
