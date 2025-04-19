@@ -1,5 +1,5 @@
 [build]
-  functions = "edge-functions"
+  functions = "functions"
 
 [functions]
   node_bundler = "esbuild"
