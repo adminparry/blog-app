@@ -12,7 +12,10 @@ export default async (req: Request, context: Context) => {
     const id = urlUtils.searchParams.get("id");
 
     let ret: Promise<any> = Promise.resolve({});
-
+    // @ts-ignore-check
+    if (!prisma[table]) {
+        return new Response("Table not found", { status: 404 });
+    }
     switch (method) {
         case "POST":
             // create a new record in the table
