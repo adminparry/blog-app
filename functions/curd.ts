@@ -39,8 +39,8 @@ export default async (req: Request, context: Context) => {
             // read a record from the table
            
             const limit = Number(urlUtils.searchParams.get("pageSize"));
-            if(limit > 0) {
-                const page = Number(urlUtils.searchParams.get("pageNo"));
+            const page = Number(urlUtils.searchParams.get("pageNo"));
+            if(limit > 0 && page > 0) {
                 // @ts-ignore-check
                 ret = prisma[table].findMany({
                     skip: (page - 1) * limit,
