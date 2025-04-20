@@ -34,6 +34,17 @@ model Menu {
   update_user String?
 }
 
+model BlogMenu {
+  id        Int       @id @default(autoincrement())
+  name  String
+  pid   Int?
+  deleted Boolean
+  createdAt DateTime?
+  updatedAt DateTime?
+  create_user String?
+  update_user String?
+}
+
 
 model Relation {
   id        Int       @id @default(autoincrement())

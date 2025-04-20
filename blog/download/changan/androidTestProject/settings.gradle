@@ -1,0 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        //maven {
+        //    allowInsecureProtocol true
+        //    url 'http://ntssy-lxqs01.nts.neusoft.local:8081/nexus/content/groups/public'
+        //}
+    }
+}
+rootProject.name = "My Application"
+include ':app'

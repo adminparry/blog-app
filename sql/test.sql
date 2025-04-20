@@ -1,0 +1,1 @@
+INSERT INTO test (tableName, id, name, email, password, createdAt, updatedAt) VALUES ('test', '1', 'test', 'test@test.com', 'test', '2022-01-01', '2022-01-01')

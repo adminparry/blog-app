@@ -1,0 +1,5 @@
+* [music](docs/zh-cn/music/README.md)
+	* [dance monkey](docs/zh-cn/music/monkey.md)
+	* [salt](docs/zh-cn/music/salt.md)
+	* [tuesday](docs/zh-cn/music/tuesday.md)
+	* [李小凤](docs/zh-cn/music/yuwen.md)

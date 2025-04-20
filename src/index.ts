@@ -1,5 +1,4 @@
-import { PrismaClient } from '../generated/prisma'
-import type { Config } from "@netlify/edge-functions"
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -16,7 +15,7 @@ async function main() {
 
   // Get all posts
   const posts = await prisma.post.findMany()
-  console.log('All posts:', typeof posts)
+  console.log('All posts:',  posts)
 }
 
 main()
