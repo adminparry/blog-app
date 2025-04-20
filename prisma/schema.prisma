@@ -36,9 +36,10 @@ model Menu {
 
 model BlogMenu {
   id        Int       @id @default(autoincrement())
-  name  String
+  name  String?
   pid   Int?
-  deleted Boolean
+  contentPath   String?
+  deleted Boolean @default(false)
   createdAt DateTime?
   updatedAt DateTime?
   create_user String?

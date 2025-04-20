@@ -12,7 +12,7 @@ type SqlData = {
 // 
 const writeSqlFile = (data: SqlData) => {
     const sql = `INSERT INTO ${data.tableName} (${Object.keys(data).join(', ')}) VALUES (${Object.values(data).map(value => `'${value}'`).join(', ')})`;
-    fs.appendFile(`./sql/${data.tableName}.sql`, sql, (err) => {
+    fs.appendFile(`./.sql/${data.tableName}.sql`, sql, (err) => {
         if (err) throw err;
     });
 }
@@ -71,12 +71,41 @@ const readMarkdownFile = (filePath: string) => {
     
     const ret = getFilesAndFoldersInDir(filePath);
    
-    console.log(JSON.stringify(ret, null, 2));
+    const fn = (pid:number,ret:IData[]) => ret.forEach(async item => {
+        console.log(pid, item.name)
+        if(item.type === 'folder'){
+            
+            const ret1 = await prisma.blogMenu.create({
+                data: {
+                    pid: pid,
+                    name: item.name,
+                    contentPath: item.path,
+                }
+            });
+            if(item.children && item.children.length){
+                fn(ret1.id, item.children)
+            }
+        }
+        if(item.type === 'file'){
+            if(item.name && item.name.endsWith('.md')){
+
+                const ret2 = await prisma.blogMenu.create({
+                    data: {
+                        pid: pid,
+                        name: item.name,
+                        contentPath: item.path,
+                    }
+                })
+            }
+            
+        }
+    })
+    fn(0,ret);
  
 }
 
 
-readMarkdownFile('./markdown/html/docs/zh-cn')
+readMarkdownFile('../markdown/html/docs/zh-cn')
 export function generateSql() {
 
 }
