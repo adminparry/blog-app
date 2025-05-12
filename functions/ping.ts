@@ -1,10 +1,12 @@
 import { Context } from '@netlify/functions';
 
 export default async function handler(req:Request, ctx: Context) {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({message: 'pong'})
-    }
+    return new Response('pong', {
+        status: 200,
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+    })
 }
 export const config = {
     path: '/ping',

@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "sql" : "ts-node src/sql.generator.ts",
+    "index": "ts-node src/index.ts",
+    "sql": "ts-node src/sql.generator.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "prisma studio",
     "db": "npm run init && npm run gen",
     "gen": "prisma generate",
     "init": "prisma migrate dev --name init",
-    "functions": "netlify dev",
+    "dev": "netlify dev",
     "tsc": "tsc netlify/edge-functions/menu.ts"
   },
   "repository": {
@@ -35,6 +35,8 @@
   "dependencies": {
     "@netlify/edge-functions": "^2.11.1",
     "@netlify/functions": "^3.1.2",
-    "@prisma/client": "^6.6.0"
+    "@prisma/client": "^6.6.0",
+    "@types/busboy": "^1.5.4",
+    "busboy": "^1.6.0"
   }
 }

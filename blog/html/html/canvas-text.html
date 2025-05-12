@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.font = '30px Arial';
+    ctx.fillStyle = 'red';
+    ctx.fillText('hello world', 10, 50);
+    ctx.strokeStyle = 'blue';
+    ctx.strokeText('hello world', 10, 100);
+    ctx.textAlign = 'center';
+    ctx.fillText('hello world', 250, 150);
+    ctx.textBaseline = 'middle';
+    ctx.fillText('hello world', 250, 200);
+    ctx.textBaseline = 'top';
+</script>
+</html>
