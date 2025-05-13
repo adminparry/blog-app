@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "prisma studio",
     "db": "npm run init && npm run gen",
-    "gen": "prisma generate",
+    "watch": "node blog/.chokidar.js",
+    "gen": "prisma generate && npm run watch",
     "init": "prisma migrate dev --name init",
     "dev": "netlify dev",
     "tsc": "tsc netlify/edge-functions/menu.ts"

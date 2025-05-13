@@ -4,6 +4,7 @@
   "description": "",
   "main": "watch_sidebar.js",
   "scripts": {
+    "watch": "node .chokidar.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

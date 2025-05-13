@@ -1,5 +1,5 @@
 [build]
-  command = "npm run generate"
+  command = "npm run gen"
   functions = "functions"
 
 [functions]

@@ -9,5 +9,6 @@ const writeS = createWriteStream("t1.txt", {flags:"r+"});
 writeS.write("666")
 readS.pipe(writeS)
 ```
+
 > writeFileSync & readFileSync
 

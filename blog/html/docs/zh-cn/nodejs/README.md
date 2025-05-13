@@ -128,3 +128,13 @@ function main(){
 }
 ```
 
+> 全局错误拦截
+
+``` js
+process.on('uncaughtException', async (p) => {
+  console.error('未捕获的异常:', err);
+})
+```
+
+
+
