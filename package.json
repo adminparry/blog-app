@@ -9,7 +9,7 @@
     "studio": "prisma studio",
     "db": "npm run init && npm run gen",
     "watch": "node blog/.chokidar.js",
-    "gen": "prisma generate && npm run watch",
+    "gen": "prisma generate",
     "init": "prisma migrate dev --name init",
     "dev": "netlify dev",
     "tsc": "tsc netlify/edge-functions/menu.ts"
