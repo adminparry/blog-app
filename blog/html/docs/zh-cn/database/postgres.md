@@ -1,5 +1,6 @@
 # postgres
 
+
 > docker-compose
 ```  bash
 version: '3.1'
@@ -21,20 +22,20 @@ services:
       - 8080:8080
 
 ```
-> databases
+> pgsql 查询所有库名
 
 ``` sql
 
 select datname from pg_database;
 ```
 
-> tables
+> pgsql 查询所有表名
 
 ``` sql
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
 ```
 
-> columns
+> pgsql 查询表结构
 
 ``` sql
 select * from information_schema.columns WHERE table_name='sys_schema';
