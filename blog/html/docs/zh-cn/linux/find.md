@@ -16,3 +16,9 @@ find / -type f -name "*.log" | xargs grep "ERROR"
 ``` bash
 find . -name “*.in” | xargs grep "thermcontact"
 ```
+
+> 从当前目录查找扩展名为.swo的文件 并删除
+
+``` bash
+find . -name "*.swo" -exec rm -rf {} \;
+```
