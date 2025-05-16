@@ -1,0 +1,79 @@
+# application.yml
+
+## 配置文件格式
+
+Spring Boot 使用 `application.yml` 作为默认的配置文件格式，它是一种简洁的配置文件格式，可以方便地配置各种属性。
+
+> 环境区分
+
+application-dev.yml
+
+application-prod.yml
+
+
+```yaml
+spring:
+  profiles:
+    active: dev
+```
+> 端口配置
+
+``` yaml
+server:
+  port: 8080
+```
+> springboot 配置
+``` yaml
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+      enabled: true
+  application:
+    name: report-portal
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_null
+```
+
+> spring数据源配置
+```yaml
+spring:
+  datasource:
+    url: ENC(qStGagKXtrIOgd0YSYjEY0QQE+AqM5Gx1Bsg0Lhtxahrar5kzR1DPQhdS4LL5IQGS/U8sI3FmCzeFISvY5StWmRhFsataaCehaX/Uk/2+10TFV+u3hsv+GYhNQC0+aIt7jjZSYZDcPCqIqQ+LoOG5LZK1RDKypVp/hs0TXvNNXb71Crxm2eNDs3nL7dJ360f)
+    username: ENC(z5RrlFI3KEEDzOL4Gaphh57lAHQJrTaTpIX4LEZgzUc=)
+    password: ENC(d28fwOMUGCxW7KJvvYPoOeYViA0wUvX0USmSXbpREXA=)
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      max-lifetime: 1800000  # 连接最大寿命 30min
+      connection-timeout: 1800000  # 连接超时时间 30min
+      minimum-idle: 100   # 最小空闲连接数
+      maximum-pool-size: 200  # 最大连接池大小
+      connection-test-query: "select 1"
+      idle-timeout: 600000 # 空闲连接超时时长 10min
+  redis:
+    host: ENC(lkpLpUIy2uTVrUr7Iom0NXTjGE25ST6mgDZq5pzyRzFHDjeoW09QH21CIUN+f/SnnXh5egzeSF9c2O0UK95Lug==)
+    password: ENC(TRtxiCr2KlovRQEnONJ4ktu9CT6E9PsyUElm7dHulrE=)
+    port: 6379
+    database: 3
+    ssl: true
+    redisson:
+      config: |
+        ENC(3vD3mXJ6UUdROGv5yLc5oQqTp7dZ0dXx2aarhnOwIVnJtx3wZOEV1pSLcYSFzoWeS9zT1GJm8FagANfraFIP9ibFQCxsSCUeoiqspiw3RQAq0dxh+i9ImMITAf8LbLtuT185Ni8Ma6yycOCqaH3dub7DTpkAaPIZKlOnkJye8hrnyyKPtdSMGAvX9gbLOsNcCCef+HrIONFPWSYAWMz2sbr33uu9KdlkQa4zTXhQv3swOjs6NgOJ2Ncx1HA9N2wZsKfaNiMkAP6IREw7+CIlVrg2MmDyAFQHm6Mm5XkJoNAjeLR6zUOODdw4oubIcippUqE2ag4HnSC6Ifyd36osUiqM945sS+1bF3W4UiRbnAiRMvQU0Y/dwwBAmkagTvuPwGebT1OxZJjqk8m7PITv0SNPcvm7IADnL1bS0ksyn/2/IPV1hzH9+tLCHrX26sii9bchisuqbT8=)
+  jasypt:
+    encryptor:
+        password: 建议存放在环境变量中
+        algorithm: PBEWithMD5AndDES
+        iv-generator-classname: org.jasypt.iv.RandomIvGenerator
+```

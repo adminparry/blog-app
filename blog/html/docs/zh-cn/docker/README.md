@@ -1,5 +1,17 @@
 # docker
 
+> 国内镜像地址
+
+镜像源提供方	镜像加速地址（Registry Mirror URL）	备注
+阿里云	https://<你的ID>.mirror.aliyuncs.com	✅ 最推荐，需免费获取专属地址
+腾讯云	https://mirror.ccs.tencentyun.com	✅ 腾讯云用户优先选择
+网易云	https://hub-mirror.c.163.com	✅ 稳定免费，适合非云厂商用户
+中科大	https://docker.mirrors.ustc.edu.cn	✅ 教育网友好，开源镜像站
+百度云	https://mirror.baidubce.com	百度云用户适用
+华为云	https://<你的ID>.swr.cn-south-1.myhuaweicloud.com	华为云用户专属
+
+
+> 下载地址
 
 https://mirrors.aliyun.com/docker-ce/
 
@@ -14,6 +26,28 @@ curl -sSL https://get.daocloud.io/docker | sh
 
 ``` bash
 brew install docker --cask
+```
+> 删除所有容器
+
+``` bash
+docker rm -f $(docker ps -a -q)
+```
+
+> 删除所有镜像
+
+``` bash
+docker rmi $(docker images -q)
+```
+> 停止所有的容器
+
+``` bash
+docker stop $(docker ps -aq)
+```
+> 删除所有volumes
+``` bash
+docker volume rm $(docker volume ls -q)
+# 删除未被使用的volumes
+docker volumes prune
 ```
 > 查看
 ``` bash
@@ -158,6 +192,12 @@ docker-compose retart
 
 ``` bash
 docker rmi imageid -f
+```
+
+> 进入容器命令
+
+``` bash
+docker exec -it containerid /bin/bash
 ```
 
 

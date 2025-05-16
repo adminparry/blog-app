@@ -3,24 +3,19 @@
 
 > docker-compose
 ```  bash
-version: '3.1'
+version: '3.8'
 services:
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: root
-    ports:
-      - 5432:5432
-    volumes:
-      - ./data:/var/lib/postgresql/data
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-
+postgres:
+image: postgres:15
+container_name: postgres_db
+environment:
+POSTGRES_USER: root
+POSTGRES_PASSWORD: 123456
+POSTGRES_DB: demo
+ports:
+- "5432:5432"
+volumes:
+- /opt/docker-data/postgresql:/var/lib/postgresql/data
 ```
 > pgsql 查询所有库名
 

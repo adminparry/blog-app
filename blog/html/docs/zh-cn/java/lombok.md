@@ -1,5 +1,13 @@
 # lombok
 
+> lombok.config
+
+``` config
+config.stopBubbling = true
+lombok.addLombokGeneratedAnnotation = true
+
+```
+
 
 > install
 
