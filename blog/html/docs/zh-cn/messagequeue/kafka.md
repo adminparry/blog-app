@@ -175,13 +175,14 @@ kafka-topics --list --bootstrap-server localhost:9092
 
 > 环境变量说明
 
-变量名 | 说明
-KAFKA_BROKER_ID | 每个broker的唯一ID
-KAFKA_ZOOKEEPER_CONNECT | Zookeeper连接地址
-KAFKA_ADVERTISED_LISTENERS | 对外暴露的监听地址
-KAFKA_LISTENERS | 内部监听地址
-KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR | __consumer_offsets topic的副本数
-KAFKA_AUTO_CREATE_TOPICS_ENABLE | 是否自动创建topic
+| 变量名 | 说明|
+|-|-|
+| KAFKA_BROKER_ID | 每个broker的唯一ID|
+| KAFKA_ZOOKEEPER_CONNECT | Zookeeper连接地址|
+| KAFKA_ADVERTISED_LISTENERS | 对外暴露的监听地址|
+| KAFKA_LISTENERS | 内部监听地址|
+| KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR | __consumer_offsets topic的副本数|
+| KAFKA_AUTO_CREATE_TOPICS_ENABLE | 是否自动创建topic|
 
 
 > 注意事项
