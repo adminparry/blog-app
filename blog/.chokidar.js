@@ -25,28 +25,34 @@ chokidar.watch(target, {
     ignoreInitial: true,
 }
 ).on('all', (event, path) => {
+  path = path.replace(/\\/g, '/')
   console.group(event, path);
   
 })
 .on('change', async (path) => {
+  path = path.replace(/\\/g, '/')
     editSidebar(path);
     // file changed
 })
 .on('add', async (path) => {
+  path = path.replace(/\\/g, '/')
     editSidebar(path);
     // new file
 })
 .on('unlink', async (path) => {
+  path = path.replace(/\\/g, '/')
     editSidebar(path);
     // deleted file
 })
 .on('addDir', async (path) => {
+  path = path.replace(/\\/g, '/')
     fs.writeFileSync(path + '/' + readme, '');
     fs.writeFileSync(path + '/' + sidebar, '');
     await changeDir(path);
 })
-.on('unlinkDir', async (p) => {
-  await changeDir(p);
+.on('unlinkDir', async (path) => {
+  path = path.replace(/\\/g, '/')
+  await changeDir(path);
 })
 
 
@@ -103,7 +109,8 @@ async function editSidebar(p) {
 }
 
 function docs(str){
-    
+    str = str.replace(/\\/g, '/');
+    console.log(str)
     return str.substring(str.lastIndexOf('docs/'));
 }
 
