@@ -16,6 +16,8 @@ function findMiddle(arr) {
 }
 ```
 > 两数之和
+前提是必须有序
+
 
 ``` js
 function twoSum(nums, target) {
@@ -37,4 +39,24 @@ function twoSum(nums, target) {
 
 // 示例
 console.log(twoSum([2, 7, 11, 15], 9)); // 输出: [1, 2]
+```
+
+> 移除有序数组中的重复项
+
+``` js
+
+function removeDuplicates(arr) {
+
+    if(arr.length == 0)return 0;
+    let slow = 0;
+
+    for(let fast = 1; fast < arr.length; fast++){
+        if(arr[fast] != arr[slow]){
+            slow++;
+            arr[slow] = arr[fast]
+        }
+    }
+
+    return slow + 1;
+}
 ```

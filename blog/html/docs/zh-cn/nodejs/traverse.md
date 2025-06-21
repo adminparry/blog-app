@@ -101,7 +101,7 @@ function recursion2(stack) {
 
 
   }
-    if(nextLevel.length > 0){recursion2(nextLevel);}
+  if(nextLevel.length > 0){recursion2(nextLevel);}
 
 
 }

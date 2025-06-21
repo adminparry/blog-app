@@ -22,3 +22,37 @@ public boolean hasCycle(ListNode head) {
     return false;
 }
 ```
+
+
+``` js
+function hasCycle(head) {
+    if(!head || !head.next)return false;
+
+    let slow = head,fast = head.next;
+
+    while(fast != null && fast.next != null){
+        if(!fast || !fast.next)return false;
+        slow = slow.next;
+        fast = fast.next.next;
+        if(slow == fast)return true
+    }
+    return false;
+}
+
+```
+
+> 寻找链表中间节点
+
+``` js
+function middleNode(head) {
+
+    let slow = head, fast = head;
+    while(fast && fast.next){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    return slow;
+
+}
+```
