@@ -49,3 +49,43 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 ```
+
+> 获取自定义元注解
+
+``` java
+
+public class ApiAuthorityInterceptor implements HandlerInterceptor {
+    private static final Logger log = LoggerFactory.getLogger(ApiAuthorityInterceptor.class);
+
+    public ApiAuthorityInterceptor() {
+    }
+
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        if (handler instanceof HandlerMethod) {
+            HandlerMethod handlerMethod = (HandlerMethod)handler;
+            Method method = handlerMethod.getMethod();
+            Class<?> clazz = method.getDeclaringClass();
+
+            
+            PermissionAction permissionActionA = (PermissionAction)method.getAnnotation(PermissionAction.class);
+            Permission permissionA = (Permission)clazz.getAnnotation(Permission.class);
+            if (Objects.nonNull(permissionActionA) && Objects.nonNull(permissionA)) {
+                String permission = permissionA.code();
+                String permissionAction = permissionActionA.value() == PermissionActionType.CUSTOMIZE ? permissionActionA.customerCode() : permissionActionA.value().getValue();
+                List<String> apiPermissions = this.getApiPermissions();
+                String requestPermission = permission.concat(".").concat(permissionAction);
+                if (!apiPermissions.contains(requestPermission)) {
+                    throw new ForbiddenException(requestPermission);
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private List<String> getApiPermissions() {
+        return UserContextHolder.getApiPermissions();
+    }
+}
+
+```

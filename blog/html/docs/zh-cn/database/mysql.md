@@ -7,6 +7,18 @@
 ``` bash
 apt-get install mysql
 ```
+> docker
+
+``` bash
+docker pull mysql:8.0.26
+docker images
+
+docker run -d -p 3306:3306 --name mysql-lable -e MYSQL_ROOT_PASSWORD=yourpassword -e MYSQL_DATABASE=yourdbname mysql:8.0.26
+
+docker exec -it mysql-lable bash
+mysql -uroot -p
+```
+
 > docker-compose
 ``` yml
 version: '3'
@@ -66,11 +78,11 @@ UPDATE table_name SET field1=new-value1, field2=new-value2
 
 1. CASCADE: 从父表中删除或更新对应的行，同时自动的删除或更新自表中匹配的行。ON DELETE CANSCADE和ON UPDATE CANSCADE都被InnoDB所支持。
 
-  2. SET NULL: 从父表中删除或更新对应的行，同时将子表中的外键列设为空。注意，这些在外键列没有被设为NOT NULL时才有效。ON DELETE SET NULL和ON UPDATE SET SET NULL都被InnoDB所支持。
+2. SET NULL: 从父表中删除或更新对应的行，同时将子表中的外键列设为空。注意，这些在外键列没有被设为NOT NULL时才有效。ON DELETE SET NULL和ON UPDATE SET SET NULL都被InnoDB所支持。
 
-  3. NO ACTION: InnoDB拒绝删除或者更新父表。
+3. NO ACTION: InnoDB拒绝删除或者更新父表。
 
-  4. RESTRICT: 拒绝删除或者更新父表。指定RESTRICT（或者NO ACTION）和忽略ON DELETE或者ON UPDATE选项的效果是一样的。
+4. RESTRICT: 拒绝删除或者更新父表。指定RESTRICT（或者NO ACTION）和忽略ON DELETE或者ON UPDATE选项的效果是一样的。
 
 
 > innodb
