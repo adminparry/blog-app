@@ -49,18 +49,18 @@ JSON.parse(JSON.stringify(obj))
 
 ``` js
  const data = [
- { id: 2, name: "研发部", parentId: 1 },
- { id: 4, name: "行政人事部", parentId: 1 },
- { id: 6, name: "行政人事部下面的行政", parentId: 4 },
- { id: 7, name: "行政人事部下面的人力资源", parentId: 4 },
- { id: 20, name: "研发下面的产品组", parentId: 2 },
- { id: 21, name: "研发下面的测试组", parentId: 2 },
- { id: 22, name: "研发下面的运维组", parentId: 2 },
- { id: 23, name: "研发下面的前端组", parentId: 2 },
- { id: 24, name: "研发下面的后台组", parentId: 2 },
- { id: 25, name: "研发下面的移动开发组", parentId: 2 },
- { id: 99, name: "移动组下面的组", parentId: 25 },
- { id: 98, name: "移动组下面的组", parentId: 25 }
+ { id: 2, name: "研发部", pid: null },
+ { id: 4, name: "行政人事部", pid: null },
+ { id: 6, name: "行政人事部下面的行政", pid: 4 },
+ { id: 7, name: "行政人事部下面的人力资源", pid: 4 },
+ { id: 20, name: "研发下面的产品组", pid: 2 },
+ { id: 21, name: "研发下面的测试组", pid: 2 },
+ { id: 22, name: "研发下面的运维组", pid: 2 },
+ { id: 23, name: "研发下面的前端组", pid: 2 },
+ { id: 24, name: "研发下面的后台组", pid: 2 },
+ { id: 25, name: "研发下面的移动开发组", pid: 2 },
+ { id: 99, name: "移动组下面的组", pid: 25 },
+ { id: 98, name: "移动组下面的组", pid: 25 }
  ]
 
 function format(id="id", pid="pid", arr, root=1){
@@ -73,7 +73,40 @@ function format(id="id", pid="pid", arr, root=1){
 	})
 }
 
-console.log(format("id", "parentId", data, 1))
+console.log(format("id", "pid", data, null))
+
+
+// 构建哈希表方式
+
+function buildTreeOptimized(items) {
+  const itemMap = {};
+  const tree = [];
+  
+  // 先构建哈希表
+  for (const item of items) {
+    itemMap[item.id] = { ...item, children: [] };
+  }
+  
+  // 构建树结构
+  for (const item of items) {
+    const node = itemMap[item.id];
+    if (item.pid === null || item.pid === undefined) {
+      tree.push(node);
+    } else {
+      const parent = itemMap[item.pid];
+      if (parent) {
+        parent.children.push(node);
+      }
+    }
+  }
+  
+  return tree;
+}
+
+// 使用示例
+const treeData = buildTreeOptimized(flatData);
+
+
 ```
 > 树形结构转平行结构
 

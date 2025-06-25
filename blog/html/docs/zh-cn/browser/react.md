@@ -1,7 +1,7 @@
 # react
 
 
-> download
+> 创建react应用
 
 ``` bash
 npx create-react-app my-app --template typescript
@@ -9,6 +9,23 @@ cd my-app
 npm start
 # react react-dom
 ```
+> 集成redux
+
+``` bash
+npm install --save redux react-redux
+```
+
+> 集成react-router
+
+``` bash
+npm install --save react-router-dom
+```
+> 集成redux-thunk
+
+``` bash
+
+```
+
 
 React在v0.14之前是没有react-dom的，所有功能都包含在react里。从v0.14(2015-10)开始，react才被拆分成react和react-dom。
 

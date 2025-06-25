@@ -1,6 +1,53 @@
 # myPromise
 
 
+> 手动实现myPromise
+
+``` js
+class MyPromise {
+	constructor(executor) {
+		this.status = 'pending';
+		this.value = undefined;
+		this.reason = undefined;
+		this.onFulfilledCallbacks = [];
+		this.onRejectedCallbacks = [];
+		const resolve = (value) => {
+			if (this.status === 'pending') {
+				this.status = 'fulfilled';
+				this.value = value;
+			}
+		}
+		const reject = (reason) => {
+			if (this.status === 'pending') {
+				this.status = 'rejected';
+				this.reason = reason;
+			}
+		}
+		try {
+			executor(resolve, reject);
+		} catch (error) {
+			reject(error);
+		}
+	}
+	then(onFulfilled, onRejected) {
+		onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : value => value;
+		onRejected = typeof onRejected === 'function' ? onRejected : reason => { throw reason };		
+		}
+		if (this.status === 'fulfilled') {
+			onFulfilled(this.value);
+		}
+		if (this.status === 'rejected') {
+			onRejected(this.reason);
+		}
+		if (this.status === 'pending') {
+			this.onFulfilledCallbacks.push(onFulfilled);
+			this.onRejectedCallbacks.push(onRejected);
+		}
+
+		
+}
+```
+
 promise的执行顺序
 
 ``` js
