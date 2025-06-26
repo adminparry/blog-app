@@ -1,6 +1,5 @@
 # react
 
-
 > 创建react应用
 
 ``` bash
@@ -9,6 +8,7 @@ cd my-app
 npm start
 # react react-dom
 ```
+
 > 集成redux
 
 ``` bash
@@ -17,8 +17,7 @@ npm install --save redux react-redux
 
 > 动态路由
 
-
-[react-router-dom](../../bash/react-router-dom.sh)
+[react-router-dom](/bash/react-router-dom.sh)
 
 ``` bash
 
