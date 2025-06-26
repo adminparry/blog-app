@@ -1,4 +1,5 @@
-# moment
+# js时间管理相关的类库
+
 
 时间管理
 
@@ -98,7 +99,8 @@ Date.prototype.Format = function (fmt) { //author: meizz
     return fmt;
 }
 ```
-![dateFormat](../../assets/dateformat.gif)
+
+![dateFormat](../../assets/dateformat.gif)
 > 平年还是闰年
 
 ``` js
