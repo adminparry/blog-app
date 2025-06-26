@@ -18,7 +18,7 @@ npm install --save redux react-redux
 > 动态路由
 
 
-![react-router-dom](../../bash/react-router-dom.sh)
+[react-router-dom](../../bash/react-router-dom.sh)
 
 ``` bash
 
