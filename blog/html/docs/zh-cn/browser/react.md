@@ -3,10 +3,7 @@
 > 创建react应用
 
 ``` bash
-npx create-react-app my-app --template typescript
-cd my-app
-npm start
-# react react-dom
+npm create vite@latest
 ```
 
 > 集成redux
@@ -17,7 +14,8 @@ npm install --save redux react-redux
 
 > 动态路由
 
-[react-router-dom](/bash/react-router-dom.sh)
+[react-router-dom](/../bash/react-router-dom.sh)
+<a href="window.location.host + '/bash/react-router-dom.sh'" target="_blank">react-router-dom</a>
 
 ``` bash
 
