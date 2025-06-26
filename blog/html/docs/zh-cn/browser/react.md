@@ -14,8 +14,7 @@ npm install --save redux react-redux
 
 > 动态路由
 
-[react-router-dom](/../bash/react-router-dom.sh)
-<a href="window.location.host + '/bash/react-router-dom.sh'" target="_blank">react-router-dom</a>
+<a href="/docs/assets/bash/react-router-dom.sh" target="_blank">react-router-dom</a>
 
 ``` bash
 
