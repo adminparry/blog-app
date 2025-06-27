@@ -4,6 +4,8 @@ React在v0.14之前是没有react-dom的，所有功能都包含在react里。�
 
 > 创建react应用
 
+<a href="docs/assets/bash/react-creator.sh" target="_blank">react-creator</a>
+
 ``` bash
 npm create vite@latest
 ```
