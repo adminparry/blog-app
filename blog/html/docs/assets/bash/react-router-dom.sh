@@ -1,5 +1,5 @@
 
-npm install --save react-router-dom
+
 mkdir src/pages
 echo 'export default function Home(){return (<div>Home</div>)}' > src/pages/Home.tsx
 echo 'export default function Dashboard(){return (<div>Dashboard</div>)}' > src/pages/Dashboard.tsx
@@ -8,12 +8,12 @@ echo 'export default function About(){return (<div>About</div>)}' > src/pages/Ab
 touch routing.config.tsx
 
 
-echo 'import { lazy } from 'react';
+echo "import { lazy } from 'react';
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 
 const lazyLoad = (moduleName) => {
 
-    const Module = lazy(() => import(`./pages/${moduleName}`));
+    const Module = lazy(() => import(\`./pages/\${moduleName}\`));
 
     return <Module />;
 }
@@ -45,4 +45,4 @@ export default function RouterComponent() {
     
 
     return <RouterProvider router={router} />
-}' > src/routing.config.tsx
+}" > src/routing.config.tsx

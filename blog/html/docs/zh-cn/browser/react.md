@@ -1,5 +1,7 @@
 # react
 
+React在v0.14之前是没有react-dom的，所有功能都包含在react里。从v0.14(2015-10)开始，react才被拆分成react和react-dom。
+
 > 创建react应用
 
 ``` bash
@@ -17,65 +19,8 @@ npm install --save redux react-redux
 <a href="docs/assets/bash/react-router-dom.sh" target="_blank">react-router-dom</a>
 
 ``` bash
-
 npm install --save react-router-dom
-mkdir src/pages
-echo 'export default function Home(){return (<div>Home</div>)}' > src/pages/Home.tsx
-echo 'export default function Dashboard(){return (<div>Dashboard</div>)}' > src/pages/Dashboard.tsx
-echo 'export default function About(){return (<div>About</div>)}' > src/pages/About.tsx
-
-touch routing.config.tsx
-
-
-echo 'import { lazy } from 'react';
-import { createHashRouter, RouterProvider } from 'react-router-dom'
-
-const lazyLoad = (moduleName) => {
-
-    const Module = lazy(() => import(`./pages/${moduleName}`));
-
-    return <Module />;
-}
-
-
-const routes = [
-    {
-        path: '/',
-        element: lazyLoad('Home'),
-        exact: true,
-        name: 'Home'
-    },
-    {
-        path: '/about',
-        element: lazyLoad('About'),
-        exact: true,
-        name: 'About'
-    },
-    {
-        path: '/dashboard',
-        element: lazyLoad('Dashboard'),
-        exact: true,
-    }
-]
-
-const router =  createHashRouter(routes)
-
-export default function RouterComponent() {
-    
-
-    return <RouterProvider router={router} />
-}' > src/routing.config.tsx
 ```
-
-
-> 集成redux-thunk
-
-``` bash
-
-```
-
-
-React在v0.14之前是没有react-dom的，所有功能都包含在react里。从v0.14(2015-10)开始，react才被拆分成react和react-dom。
 
 > jsx
 
@@ -214,12 +159,6 @@ useImperativeHandle
 原理为动态插入script标签
 
 
-## react-router-dom
-
-``` bash
-npm install react-router-dom --save
-
-```
 ``` tsx
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
@@ -424,3 +363,5 @@ function useFormat(list){
 > react 中的diff
 
 同级比较 循环新dom对象 去找老dom对象中是否有 如果没有进行新创建 如果有则移动节点 根据老dom对象索引与更新索引比较进行移动与不移动
+
+

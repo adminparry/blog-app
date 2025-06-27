@@ -12,6 +12,7 @@ your_name="qinjx"
 #使用
 echo $your_name
 echo ${your_name}
+echo "$your_name"
 #只读
 myUrl="https://www.google.com"
 readonly myUrl
