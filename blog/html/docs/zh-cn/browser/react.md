@@ -24,6 +24,28 @@ npm install --save redux react-redux
 npm install --save react-router-dom
 ```
 
+> 文档及常用方法
+
+https://reactrouter.remix.org.cn/home
+
+``` js
+import * as React from 'react'
+import { useLocation, useRoutes , useParams, useSearchParams} from 'react-router'
+
+function SomeComponent() {
+  let location = useLocation()
+
+  React.useEffect(() => {
+    // Google Analytics
+    ga('send', 'pageview')
+  }, [location]);
+
+  return (
+    // ...
+  );
+}
+```
+
 > jsx
 
 > state
