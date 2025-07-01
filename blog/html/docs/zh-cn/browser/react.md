@@ -12,8 +12,11 @@ npm create vite@latest
 
 > 集成redux
 
+
+<a href="docs/assets/bash/react-redux.sh" target="_blank">react-redux</a>
+
 ``` bash
-npm install --save redux react-redux
+npm install redux react-redux @reduxjs/toolkit
 ```
 
 > 动态路由
